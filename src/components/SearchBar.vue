@@ -7,18 +7,16 @@
       placeholder="Rechercher un Pokémon..."
     />
   </div>
-
 </template>
 
 <script setup lang="ts">
 import { ref, defineEmits } from 'vue';
 
 const searchQuery = ref('');
-const emit = defineEmits(['search', 'sort']);
+const emit = defineEmits(['search']);
 
-
-
-
+const onSearch = () => {
+  emit('search', searchQuery.value);  
+};
 
 </script>
-
